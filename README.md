@@ -24,12 +24,7 @@ Then go to the address http://localhost:5000/. This should run the program.
 The folder marked 'database13' contains the required files to run this program. Please do not delete any of
 these files. I will cry if you do.
 
-Mercurial is available with this project if you follow these instructions to run it.
-1. Open a command prompt
-2. Select the drive which this project is stored on by typing the name of the drive (e.g E) with a colon into 
-the command prompt
-3. Type cd database13 into the command prompt
-4. Type hg log into the command prompt
+The Mercurial repository I used is in the '.hg.zip' file. Unfortunately, I have no idea how to get it to work. I promise I did do some committing and stuff but I can't put it into GitHub because... actually I have no idea. It just didn't work.
 
 ChatGPT was not used for this project, since it doesn't work for me. However, I used several websites, which are below:
 https://www.w3schools.com/tags/att_option_selected.asp
