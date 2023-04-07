@@ -1,0 +1,32 @@
+<h3>Subjects</h3>
+<br/>
+<form action="/" method="get">
+    <button type="submit">Home</button>
+</form>
+<form action="/subjects/edit" method="get">
+    <button type="submit">Add Subject</button>
+</form>
+<form action="/subjects" method="post">
+    <label for="search">Search for: </label>
+    <input type="text" id="search" name="search"/>
+    <button type="submit">Search</button></form>
+<br/>
+<br/>
+<table>
+    <tr>
+        <td><b>ID</b></td>
+        <td><b>Name</b></td>
+        <td><b>Year Level</b></td>
+        <td><b>Teacher ID</b></td>
+        <td><b>Delete</b></td>
+    </tr>
+    {% for item in items %}
+    <tr>
+        <td><a href="/subjects/edit?id={{item.id}}">{{item.id}}</a></td>
+        <td>{{item.name}}</td>
+        <td>{{item.year_level}}</td>
+        <td>{{item.teacher_id}}</td>
+        <td><a href="/delete?type=subject&id={{item.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>

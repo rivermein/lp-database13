@@ -1,0 +1,14 @@
+<form action="/students/edit/addsubject?id={{student.id}}" method="post">
+    <h3></h3>
+    <label for="subject">Subject: </label>
+
+    <select id="subject" name="subject">
+        <option value="null">&nbsp;</option>
+        {% for subject in subjects %}
+                <option value="{{subject.id}}">{{subject.name}} {{subject.year_level}}</option>
+        {% endfor %}
+    </select>
+    <br><br>
+
+    <button type="submit">Confirm</button>
+</form>

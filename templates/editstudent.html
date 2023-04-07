@@ -1,0 +1,45 @@
+<h3>Edit Student </h3>
+<form action="/students/edit" method="post">
+    <input type="hidden" id="id" name="id" value="{{item.id}}"/>
+
+    <label for="first_name">First Name: </label>
+    <input type="text" id="first_name" name="first_name" value="{{item.first_name}}"/>
+    <br><br>
+
+    <label for="last_name">Last Name: </label>
+    <input type="text" id="last_name" name="last_name" value="{{item.last_name}}"/>
+    <br><br>
+
+    <label for="year_level">Year Level: </label>
+    <input type="text" id="year_level" name="year_level" value="{{item.year_level}}"/>
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+    {% if subjects != "No subjects yet!" -%}
+        <h3>Subjects</h3>
+        <table>
+        <tr>
+            <td><b>ID</b></td>
+            <td><b>Name</b></td>
+            <td><b>Year Level</b></td>
+            <td><b>Teacher ID</b></td>
+            <td><b>Remove</b></td>
+        </tr>
+        {% for subject in subjects %}
+        <tr>
+            <td>{{subject.id}}</td>
+            <td>{{subject.name}}</td>
+            <td>{{subject.year_level}}</td>
+            <td>{{subject.teacher_id}}</td>
+            <td><a href="/delete?type=studentsubject&studentid={{item.id}}&subjectid={{subject.id}}">Remove Subject</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+    {% else -%}
+        <h3>No Subjects Yet!</h3>
+    {% endif -%}
+</form>
+{% if subjects != "No subjects yet!" -%}
+    <a href="/students/edit/addsubject?id={{item.id}}">Add Subject</a>
+{% endif -%}
